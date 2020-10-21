@@ -19,11 +19,6 @@ def root():
 
     # Requested to return Name, Type, and Description
     json_req = request.get_json()
-    # TODO find which variables are inbound
-    # effects = json_req['effects']
-    # ailments = json_req['ailments']
-    # input_variable3 = request_json['input_variable3'] *** I don't believe there is a third, but just in case.
-
     stringData = json_req['stringData']
 
     def model1(input_string):
@@ -42,11 +37,11 @@ def root():
             return MJ.nlargest(20, 'fitness') # as is this will return a df with the top 20 matches. May need to adjust.
 
     df_pred = model1(StringData)
-    '''TODO for loop to extract info to return from each strain
+    '''TODO for loop to extract info to return from each strain '''
             strain = 
-            profile = 
-            ...other fields to return'''
-    return jsonify({'Strain':strain, 'Indica_Sativa_Hybrid':indica_sativa_hybrid, 'Description':description}) #this may need adjustments
+            ISHtype = 
+            description = 
+    return jsonify({'Strain':strain, 'Type':ISHtype, 'Description':description}) #this may need adjustments
 
 if __name__ == '__main__':
     app.run()
