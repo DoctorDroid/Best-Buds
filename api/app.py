@@ -19,9 +19,10 @@ def root():
     # Requested to return Name, Type, and Description
     json_req = request.get_json()
     # TODO find which variables are inbound
-    input_variable1 = request_json['input_variable1']
-    input_variable2 = request_json['input_variable2']
-    input_variable3 = request_json['input_variable3']
+    effects = json_req['effects']
+    ailments = json_req['ailments']
+    # input_variable3 = request_json['input_variable3'] *** I don't believe there is a third, but just in case.
+    # string separated by comma to list
 
     # TODO I left this commented out because I don't believe we are required to log?
     # url = "https://cannedmedical.herokuapp.com/recommendation/search" (wrong anyway)
