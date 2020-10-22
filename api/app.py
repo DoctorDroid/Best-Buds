@@ -18,15 +18,17 @@ def root():
 @app.route('/predict', methods=['POST'])
 
 # Requested to return Name, Type, and Description
-json_req = request.get_json()
+
 # TODO find which variables are inbound
 # effects = json_req['effects']
 # ailments = json_req['ailments']
 # input_variable3 = request_json['input_variable3'] *** I don't believe there is a third, but just in case.
 
-stringData = json_req['stringData']
+
 
 def model1(input_string):
+    json_req = request.get_json()
+    stringData = json_req['stringData']
     user_input = pd.DataFrame([word.strip(string.punctuation) for word in input_string.split()],
                                     columns=['search_string']) # string separated by comma to single column df
     MJ= marijuana.copy()
