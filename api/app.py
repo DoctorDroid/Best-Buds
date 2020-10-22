@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def root():
-    return {"message" adfadfadf : "Honestly, Bessie? People dont care about anyone but themselves. They dont notice anything. They are never looking at whats interesting. Theyre always looking at themselves. -Kevin Wilson, Nothing to See Here "}
+    return {"message" : "Honestly, Bessie? People dont care about anyone but themselves. They dont notice anything. They are never looking at whats interesting. Theyre always looking at themselves. -Kevin Wilson, Nothing to See Here "}
 
 
 @app.route('/predict', methods=['POST'])
