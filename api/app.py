@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
+import string
 
 #from (the request file) import *
 # TODO the request file
