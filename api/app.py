@@ -11,19 +11,13 @@ def create_app():
 
     @app.route('/')
     def root():
-        return {"message" : "Honestly, Bessie? People dont care about anyone but themselves. They dont notice anything. They are never looking at whats interesting. Theyre always looking at themselves. -Kevin Wilson, Nothing to See Here "}
+        return "Honestly, Bessie? People dont care about anyone but themselves. They dont notice anything. They are never looking at whats interesting. Theyre always looking at themselves. -Kevin Wilson, Nothing to See Here "
 
 
     @app.route('/predict', methods=['POST'])
     def model1(input_string):
         # Requested to return Name, Type, and Description
-        json_req = requests.values['stringData']
-        # TODO find which variables are inbound
-        # effects = json_req['effects']
-        # ailments = json_req['ailments']
-        # input_variable3 = request_json['input_variable3'] *** I don't believe there is a third, but just in case.
-
-        stringData = json_req['stringData']
+        stringData = requests.values['stringData']
         user_input = pd.DataFrame([word.strip(string.punctuation) for word in input_string.split()], 
                                     columns=['search_string']) # string separated by comma to single column df
         MJ= marijuana.copy()
@@ -45,6 +39,4 @@ def create_app():
     #         profile = 
     #         ...other fields to return'''
     # return jsonify({'Strain':strain, 'Indica_Sativa_Hybrid':indica_sativa_hybrid, 'Description':description}) #this may need adjustments
-
-if __name__ == '__main__':
-    app.run()
+    return app
