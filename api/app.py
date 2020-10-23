@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, jsonify
 #from (the request file) import *
 # TODO the request file
 #import logging
-import requests
+#import requests
 #import string
 
 def create_app():
@@ -17,7 +17,7 @@ def create_app():
     @app.route('/predict', methods=['GET', 'POST'])
     def model1():
         # Requested to return Name, Type, and Description
-        stringData = requests.values['stringData']
+        stringData = request.values['stringData']
         user_input = pd.DataFrame([word.strip(string.punctuation) for word in stringData.split()],
                                     columns=['search_string']) # string separated by comma to single column df
         MJ= marijuana.copy()
