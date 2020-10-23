@@ -18,7 +18,7 @@ def create_app():
     def model1():
         # Requested to return Name, Type, and Description
         stringData = requests.values['stringData']
-        user_input = pd.DataFrame([word.strip(string.punctuation) for word in input_string.split()], 
+        user_input = pd.DataFrame([word.strip(string.punctuation) for word in stringData.split()],
                                     columns=['search_string']) # string separated by comma to single column df
         MJ= marijuana.copy()
         MJ['fitness'] = 0 ## sets all strains initial fitness to 0
