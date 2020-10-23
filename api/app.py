@@ -31,7 +31,8 @@ def create_app():
                 if each_string in MJ['Effects_y'][i]:
                     MJ['fitness'][i] +=1
         df = MJ.nlargest(20, 'fitness')
-        return df.to_json(orient="records") # as is this will return a df with the top 20 matches. May need to adjust.
+        results = df.to_json(orient="records")
+        return results # as is this will return a df with the top 20 matches. May need to adjust.
 
     # df_pred = model1(StringData)
     # '''TODO for loop to extract info to return from each strain
