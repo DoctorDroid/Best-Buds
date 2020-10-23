@@ -20,6 +20,8 @@ def create_app():
     def model1():
         marijuana = pd.read_csv("https://raw.githubusercontent.com/Build-Week-PT-Med-Cabinet-2/DS/main/Marijuana.csv")
         # Requested to return Name, Type, and Description
+        marijuana['Effects_x'].fillna('No Data', inplace=True)
+        marijuana['Effects_y'].fillna('No Data', inplace=True)
         stringData = request.values['stringData']
         user_input = pd.DataFrame([word.strip(string.punctuation) for word in stringData.split()],
                                     columns=['search_string']) # string separated by comma to single column df
