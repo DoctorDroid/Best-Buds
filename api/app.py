@@ -15,7 +15,7 @@ def create_app():
 
 
     @app.route('/predict', methods=['GET', 'POST'])
-    def model1(input_string):
+    def model1():
         # Requested to return Name, Type, and Description
         stringData = requests.values['stringData']
         user_input = pd.DataFrame([word.strip(string.punctuation) for word in input_string.split()], 
