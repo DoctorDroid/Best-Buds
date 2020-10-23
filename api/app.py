@@ -18,6 +18,7 @@ def create_app():
 
     @app.route('/predict', methods=['GET', 'POST'])
     def model1():
+        marijuana = pd.read_csv("https://raw.githubusercontent.com/Build-Week-PT-Med-Cabinet-2/DS/main/Marijuana.csv")
         # Requested to return Name, Type, and Description
         stringData = request.values['stringData']
         user_input = pd.DataFrame([word.strip(string.punctuation) for word in stringData.split()],
