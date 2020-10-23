@@ -10,7 +10,7 @@ import string
 
 def create_app():
     app = Flask(__name__)
-
+    app.use(allowCrossDomain)
     @app.route('/')
     def root():
         return "Honestly, Bessie? People dont care about anyone but themselves. They dont notice anything. They are never looking at whats interesting. Theyre always looking at themselves. -Kevin Wilson, Nothing to See Here "
@@ -39,10 +39,4 @@ def create_app():
         results = df.to_json(orient="records")
         return results # as is this will return a df with the top 20 matches. May need to adjust.
 
-    # df_pred = model1(StringData)
-    # '''TODO for loop to extract info to return from each strain
-    #         strain = 
-    #         profile = 
-    #         ...other fields to return'''
-    # return jsonify({'Strain':strain, 'Indica_Sativa_Hybrid':indica_sativa_hybrid, 'Description':description}) #this may need adjustments
-    return app
+   return app
